@@ -1,0 +1,74 @@
+/* External styles for About Me page with color theme: pink and blue */
+
+/* General page styling so that the whole page looks clean and centered */
+body {
+    font-family: "Lucida Console", "Courier New", monospace;
+    background-color: #fff5f8;
+    color: #2c3e50;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 30px;
+}
+
+h1 {
+    color: #e75480;
+    text-align: center;
+    border-bottom: 3px solid #1e5fa8;
+    padding-bottom: 10px;
+}
+
+/* Style for all level two headers with at least two rules */
+h2 {
+    color: #1e5fa8;
+    font-size: 1.6em;
+    margin-top: 30px;
+}
+
+/* Style for all paragraphs with at least two rules */
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #2c3e50;
+}
+
+/* Style for the third paragraph, using the id selector */
+p#fun-fact {
+    color: #1e5fa8;
+    font-style: italic;
+    background-color: #fde2ec;
+    padding: 10px;
+    border-left: 5px solid #e75480;
+}
+
+/* Class-based rule block applied to the "Here are some..." intro paragraphs */
+.list-intro {
+    font-weight: bold;
+    color: #e75480;
+}
+
+/* Style for all tables border with a border color */
+table, td, th {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #1e5fa8;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #e75480;
+    color: white;
+    padding: 8px 20px;
+}
+
+td {
+    padding: 8px 20px;
+    background-color: #eaf2fb;
+}
+
+/* Rule block for the logo image, applying only to img tags */
+img.logo {
+    width: 300px;
+    height: 90px;
+    display: block;
+    margin-top: 30px;
+}
