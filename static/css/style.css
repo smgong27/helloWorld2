@@ -31,6 +31,12 @@ p {
     color: #2c3e50;
 }
 
+/* More spacing between lines for ordered and unordered lists */
+ul li, ol li {
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
 /* Style for the third paragraph, using the id selector */
 p#fun-fact {
     color: #1e5fa8;
