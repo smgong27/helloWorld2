@@ -4,60 +4,54 @@
     Contact Me
 {% endblock %}
 
-{% block page_head %}
-    Contact Me
-{% endblock %}
-
 {% block page_content %}
-        {% if form_submitted %}
-            <h2>Thank you for completing my form!</h2>
+    {% if form_submitted %}
+        <h2>Thank you for completing my form!</h2>
+        <div class="col-md-6">
+            <p>First Name: {{ request.form.get('first_name') }}</p>
+        </div>
+        <div class="col-md-6">
+            <p>Last Name: {{ request.form.get('last_name') }}</p>
+        </div>
+        <div class="col-md-6">
+            <p>Email Address: {{ request.form.get('email') }}</p>
+        </div>
+        <div class="col-md-6">
+            <p>Best Way to Reach You: {{ request.form.get('contact_method') }}</p>
+        </div>
+    {% else %}
+        <form class="row g-3" action="{{ url_for('contact') }}" method="post">
             <div class="col-md-6">
-                <p>First Name: {{ request.form.get('first_name') }}</p>
+                <label for="first_name" class="form-label">First Name:</label>
+                <input type="text" class="form-control" id="first_name" name="first_name">
             </div>
             <div class="col-md-6">
-                <p>Last Name: {{ request.form.get('last_name') }}</p>
+                <label for="last_name" class="form-label">Last Name:</label>
+                <input type="text" class="form-control" id="last_name" name="last_name">
             </div>
             <div class="col-md-6">
-                <p>Email Address: {{ request.form.get('email') }}</p>
+                <label for="email" class="form-label">Email Address:</label>
+                <input type="email" class="form-control" id="email" name="email">
             </div>
             <div class="col-md-6">
-                <p>Best Way to Reach You: {{ request.form.get('contact_method') }}</p>
+                <label class="form-label">Best Way to Reach You:</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="contact_email" name="contact_method" value="Email">
+                    <label class="form-check-label" for="contact_email">Email</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="contact_phone" name="contact_method" value="Phone">
+                    <label class="form-check-label" for="contact_phone">Phone</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="contact_text" name="contact_method" value="Text">
+                    <label class="form-check-label" for="contact_text">Text</label>
+                </div>
             </div>
-
-        {% else %}
-
-            <form class="row g-3" action="{{ url_for('contact') }}" method="post">
-                <div class="col-md-6">
-                    <label for="first_name" class="form-label">First Name:</label>
-                    <input type="text" class="form-control" id="first_name" name="first_name">
-                </div>
-                <div class="col-md-6">
-                    <label for="last_name" class="form-label">Last Name:</label>
-                    <input type="text" class="form-control" id="last_name" name="last_name">
-                </div>
-                <div class="col-md-6">
-                    <label for="email" class="form-label">Email Address:</label>
-                    <input type="email" class="form-control" id="email" name="email">
-                </div>
-                <div class="col-md-6">
-                    <label class="form-label">Best Way to Reach You:</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" id="contact_email" name="contact_method" value="Email" checked>
-                        <label class="form-check-label" for="contact_email">Email</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" id="contact_phone" name="contact_method" value="Phone">
-                        <label class="form-check-label" for="contact_phone">Phone</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" id="contact_text" name="contact_method" value="Text">
-                        <label class="form-check-label" for="contact_text">Text</label>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <button type="submit" class="btn btn-primary">Submit Form</button>
-                </div>
-            </form>
-        {% endif %}
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Submit Form</button>
+            </div>
+        </form>
+    {% endif %}
 {% endblock %}
 
